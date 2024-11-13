@@ -1,5 +1,5 @@
 {
-    "color": "#6495ED",
+    "color": "#ffae00",
     "prefix": "+",
     "name": "PNL",
     "defaultjoinmessage": "{user} vient de rejoindre. Il a été invité par **{inviter:name}** qui a désormais **{invite} invitations** !",
