@@ -27,17 +27,17 @@ module.exports = {
 						let msg = m
 
 						if (!m) return message.channel.send(`Aucun giveaway trouvé dans ce salon, essayez \`prefix + giveaway reroll + <message id>\``);
-						if (m.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count <= 1) {
+						if (m.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count <= 1) {
 							return message.channel.send(`Aucun participant trouvé`)
 						}
 						let winner = false
 						if (db.get(`imposer${message.guild.id}`) !== null) {
 							winner = message.guild.members.cache.get(db.get(`imposer${message.guild.id}`))
-							if (!winner) return winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+							if (!winner) return winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 						} else if (db.get(`presencevocal${message.guild.id}`) === true) {
-							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.voice && !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.voice && !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 						} else {
-							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 						}
 						if (!winner) return message.channel.send(`Aucun participant valide`)
 						message.channel.send(`Félicitation à ${winner} qui gagne ${db.get(`gain${message.guild.id}`)}`)
@@ -47,17 +47,17 @@ module.exports = {
 						let msg = m
 
 						if (!m) return message.channel.send(`Aucun giveaway trouvé dans ce salon, essayez \`prefix + giveaway reroll + <message id>\``);
-						if (m.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count <= 1) {
+						if (m.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count <= 1) {
 							return message.channel.send(`Aucun participant trouvé`)
 						}
 						let winner = false
 						if (db.get(`imposer${message.guild.id}`) !== null) {
 							winner = message.guild.members.cache.get(db.get(`imposer${message.guild.id}`))
-							if (!winner) return winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+							if (!winner) return winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 						} else if (db.get(`presencevocal${message.guild.id}`) === true) {
-							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.voice && !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.voice && !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 						} else {
-							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+							winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 						}
 						if (!winner) return message.channel.send(`Aucun participant valide`)
 						message.channel.send(`Félicitation à ${winner} qui gagne ${db.get(`gain${message.guild.id}`)}`)
@@ -326,19 +326,19 @@ module.exports = {
 
 							var embed = new Discord.MessageEmbed()
 								.setTitle(db.get(`gain${message.guild.id}`))
-								.setDescription(`Réagissez avec ${db.get(`reactgv${message.guild.id}`) === null?   ":tada:":`${db.get(`reactgv${message.guild.id}`)}`} pour participer!\n*Nombre de gagnants : ${db.get(`winnergv${message.guild.id}`) === null?   1:`${db.get(`winnergv${message.guild.id}`)}`}*`)
-								.addField(`Temps restant`, `${duration(db.get(`dure${message.guild.id}`))}`)
+								.setDescription(`React with ${db.get(`reactgv${message.guild.id}`) === null?   ":tada:":`${db.get(`reactgv${message.guild.id}`)}`} to participate !\n*Winners : ${db.get(`winnergv${message.guild.id}`) === null?   1:`${db.get(`winnergv${message.guild.id}`)}`}*`)
+								.addField(`Time left`, `${duration(db.get(`dure${message.guild.id}`))}`)
 								.setColor(color)
 								.setFooter(`Fin`)
 								.setTimestamp(timestamp)
 							var msg = await channel.send(embed)
 
-							msg.react(`${db.get(`reactgv${message.guild.id}`) === null ? `🎉`: `${db.get(`reactgv${message.guild.id}`)}` }`)
+							msg.react(`${db.get(`reactgv${message.guild.id}`) === null ? `<:QLF:1364046376249462825>`: `${db.get(`reactgv${message.guild.id}`)}` }`)
 							client.on("messageReactionAdd", async (reaction, user) => {
 								let react = ""
 								if (!db.get(`reactgv${message.guild.id}`)) react = reaction.id
 								if (!db.get(`2reactgv${message.guild.id}`)) react = reaction.name
-								if (react === db.get(`reactgv${message.guild.id}`) === null ? "🎉" : db.get(`2reactgv${message.guild.id}`) === null ? db.get(`reactgv${message.guild.id}`) : db.get(`2reactgv${message.guild.id}`)) {
+								if (react === db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>" : db.get(`2reactgv${message.guild.id}`) === null ? db.get(`reactgv${message.guild.id}`) : db.get(`2reactgv${message.guild.id}`)) {
 
 									if (message.guild.roles.cache.get(db.get(`roleobliga${message.guild.id}`)) && !message.guild.members.cache.get(user.id).roles.cache.has(db.get(`roleobliga${message.guild.id}`)))("")
 								}
@@ -348,8 +348,8 @@ module.exports = {
 								if (!ttm.includes("-")) {
 									var slm = new Discord.MessageEmbed()
 										.setTitle(db.get(`gain${message.guild.id}`))
-										.setDescription(`Réagissez avec ${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`reactgv${message.guild.id}`) } pour participer!\n*Nombre de gagnants : ${db.get(`winnergv${message.guild.id}`) === null?   1:`${db.get(`winnergv${message.guild.id}`)}`}*`)
-										.addField(`Temps restant`, `${ttm}`)
+										.setDescription(`React with ${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`reactgv${message.guild.id}`) } to participate !\n*Winners : ${db.get(`winnergv${message.guild.id}`) === null?   1:`${db.get(`winnergv${message.guild.id}`)}`}*`)
+										.addField(`Time left`, `${ttm}`)
 										.setColor(color)
 										.setFooter(`Fin`)
 										.setTimestamp(timestamp)
@@ -365,11 +365,11 @@ module.exports = {
 
 								if (db.get(`imposer${message.guild.id}`) !== null) {
 									winner = message.guild.members.cache.get(db.get(`imposer${message.guild.id}`))
-									if (!winner) return winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+									if (!winner) return winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 								} else if (db.get(`presencevocal${message.guild.id}`) === true) {
-									winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.voice && !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+									winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.voice && !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 								} else {
-									winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
+									winner = msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).users.cache.filter((u) => !u.bot).random(Math.min(db.get(`winnergv${message.guild.id}`) === null ? 1 : `${db.get(`winnergv${message.guild.id}`)}`, msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`).count));
 								}
 								if (!winner) return message.channel.send(`Aucun participant valide`)
 								var embed = new Discord.MessageEmbed()
@@ -381,7 +381,7 @@ Crée par: ${message.author}`)
 									.setFooter(`Finis`)
 									.setTimestamp(Date.now())
 								msg.edit(embed)
-								msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "🎉": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`)
+								msg.reactions.cache.get(`${db.get(`reactgv${message.guild.id}`) === null ? "<:QLF:1364046376249462825>": db.get(`2reactgv${message.guild.id}`) === null ?  db.get(`reactgv${message.guild.id}`):db.get(`2reactgv${message.guild.id}`) }`)
 								channel.send(`Félicitation à ${winner} qui gagne ${db.get(`gain${message.guild.id}`)}`)
 							}, db.get(`dure${message.guild.id}`));
 						}
