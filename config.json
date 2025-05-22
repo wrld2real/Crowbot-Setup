@@ -1,13 +1,12 @@
 {
     "color": "#ffae00",
     "prefix": "+",
-    "name": "Wumpuz",
+    "name": "lirimqlf",
     "defaultjoinmessage": "{user} vient de rejoindre. Il a été invité par **{inviter:name}** qui a désormais **{invite} invitations** !",
     "defaultleavemessage": "{user} vient de quitter. Il avais été invité par **{inviter:name}** qui a désormais **{invite} invitations** ",
     "defaultLevelmessage": "**{user}** vient de passer au level **{level}** bravo à lui !",
     "owner": [
-        "922171887147175996", 
-        "198647432618180609",
+        "198647432618180609", 
         ""
     ]
 }
